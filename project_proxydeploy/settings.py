@@ -67,7 +67,23 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
+    # 'postgress': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': config('NAME'), 
+    #     'USER': config('USER'), 
+    #     'PASSWORD': config('PASSWORD'),
+    #     'HOST':  config('HOST'), 
+    #     'PORT': config('PORT'),
+    # },
+    # 'mysql': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': config('NAME'), 
+    #     'USER': config('USER'), 
+    #     'PASSWORD': config('PASSWORD'),
+    #     'HOST':  config('HOST'), 
+    #     'PORT': config('PORT'),
+    # }
 }
 
 # Password validation
