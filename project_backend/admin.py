@@ -17,3 +17,17 @@ class UserAdmin(admin.ModelAdmin):
     )
     
 admin.site.register(models.User, UserAdmin)
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = (
+        'taskName',
+        'taskDesc',
+        'taskLocation',
+        'taskStartDate',
+        'taskStopDate',
+        'taskPrice',
+        'taskStatus',
+        'taskAssignedby',
+        'taskCarriedBy'
+    )
+admin.site.register(models.Task, TaskAdmin)

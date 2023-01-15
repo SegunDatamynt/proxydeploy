@@ -94,3 +94,28 @@ class User(HelperModel,AbstractBaseUser,PermissionsMixin):
         }
         
 auditlog.register(model=User, exclude_fields=['password', 'last_login'])
+
+
+class Task(HelperModel,models.Model):
+    """
+    A base class that saves all task created
+    """
+    status = (
+        ('Pending', 'Pending'),
+        ('Started', 'Started'),
+        ('Completed', 'Completed')
+    )
+    taskName = models.CharField(max_length=250, null=False, blank=False)
+    taskDesc = models.CharField(max_length=250, null=False, blank=False)
+    taskLocation = models.CharField(max_length=250, null=False, blank=False)
+    taskStartDate = models.DateTimeField(blank=False, null=False)
+    taskStopDate = models.DateTimeField(blank=False, null=False)
+    taskPrice = models.DecimalField(max_digits=10, decimal_places=2,max_length=255)
+    taskStatus = models.CharField(choices=status,max_length=50, default='Pending')
+    taskAssignedby = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_assigned_by', blank=True, null=True)
+    taskCarriedBy = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_carried_by', blank=True, null=True)
+    
+    def __str__(self):
+        return f'{self.taskName}'
+    
+auditlog.register(model=Task)
