@@ -118,6 +118,4 @@ class Task(HelperModel,models.Model):
     def __str__(self):
         return f'{self.taskName}'
     
-    class Meta:
-        db_table = 'task'
 auditlog.register(model=Task)
