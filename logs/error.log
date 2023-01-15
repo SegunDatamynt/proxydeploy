@@ -1,2 +1,8 @@
 WARNING 2023-01-10 20:31:45,907 django.request Thread-3 (process_request_thread) 1640 log log.py 241 django.request log_response 16412 Unauthorized: /api/v1/users/admin/user/12/
 WARNING 2023-01-10 20:31:45,912 django.server Thread-3 (process_request_thread) 1640 basehttp basehttp.py 187 django.server log_message 16412 "GET /api/v1/users/admin/user/12/ HTTP/1.1" 401 5310
+WARNING 2023-01-14 09:27:06,248 django.request Thread-1 (process_request_thread) 6164885504 log log.py 241 django.request log_response 34594 Not Found: /accounts/login/
+WARNING 2023-01-14 09:27:06,250 django.server Thread-1 (process_request_thread) 6164885504 basehttp basehttp.py 187 django.server log_message 34594 "GET /accounts/login/?next=/ HTTP/1.1" 404 2502
+WARNING 2023-01-14 09:27:06,282 django.request Thread-1 (process_request_thread) 6164885504 log log.py 241 django.request log_response 34594 Not Found: /favicon.ico
+WARNING 2023-01-14 09:27:06,282 django.server Thread-1 (process_request_thread) 6164885504 basehttp basehttp.py 187 django.server log_message 34594 "GET /favicon.ico HTTP/1.1" 404 2483
+WARNING 2023-01-14 09:39:56,644 django.request Thread-8 (process_request_thread) 6164885504 log log.py 241 django.request log_response 34594 Not Found: /ADMIN
+WARNING 2023-01-14 09:39:56,649 django.server Thread-8 (process_request_thread) 6164885504 basehttp basehttp.py 187 django.server log_message 34594 "GET /ADMIN HTTP/1.1" 404 2465

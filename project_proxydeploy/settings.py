@@ -64,26 +64,27 @@ WSGI_APPLICATION = 'project_proxydeploy.wsgi.application'
 
 # Database
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
     # 'postgress': {
     #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': config('NAME'), 
-    #     'USER': config('USER'), 
+    #     'NAME': config('NAME'),
+    #     'USER': config('USER'),
     #     'PASSWORD': config('PASSWORD'),
-    #     'HOST':  config('HOST'), 
+    #     'HOST':  config('HOST'),
     #     'PORT': config('PORT'),
     # },
-    # 'mysql': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': config('NAME'), 
-    #     'USER': config('USER'), 
-    #     'PASSWORD': config('PASSWORD'),
-    #     'HOST':  config('HOST'), 
-    #     'PORT': config('PORT'),
-    # }
+    "default": {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+
+    }
 }
 
 # Password validation
