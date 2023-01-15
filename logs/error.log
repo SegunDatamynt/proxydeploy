@@ -1,4 +1,0 @@
-WARNING 2023-01-10 20:31:45,907 django.request Thread-3 (process_request_thread) 1640 log log.py 241 django.request log_response 16412 Unauthorized: /api/v1/users/admin/user/12/
-WARNING 2023-01-10 20:31:45,912 django.server Thread-3 (process_request_thread) 1640 basehttp basehttp.py 187 django.server log_message 16412 "GET /api/v1/users/admin/user/12/ HTTP/1.1" 401 5310
-WARNING 2023-01-12 18:32:58,639 django.request Thread-1 (process_request_thread) 13204 log log.py 241 django.request log_response 17876 Not Found: /admin/project_backend/tasks/
-WARNING 2023-01-12 18:32:58,642 django.server Thread-1 (process_request_thread) 13204 basehttp basehttp.py 187 django.server log_message 17876 "GET /admin/project_backend/tasks/ HTTP/1.1" 404 5143

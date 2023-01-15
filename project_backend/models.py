@@ -110,10 +110,10 @@ class Task(HelperModel,models.Model):
     taskLocation = models.CharField(max_length=250, null=False, blank=False)
     taskStartDate = models.DateTimeField(blank=False, null=False)
     taskStopDate = models.DateTimeField(blank=False, null=False)
-    taskPrice = models.IntegerField(blank=False, null=False)
+    taskPrice = models.DecimalField(max_digits=10, decimal_places=2,max_length=255)
     taskStatus = models.CharField(choices=status,max_length=50, default='Pending')
-    taskAssignedby = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_assigned_by')
-    taskCarriedBy = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_carried_by')
+    taskAssignedby = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_assigned_by', blank=True, null=True)
+    taskCarriedBy = models.ForeignKey(User, on_delete=models.PROTECT, related_name='task_carried_by', blank=True, null=True)
     
     def __str__(self):
         return f'{self.taskName}'
